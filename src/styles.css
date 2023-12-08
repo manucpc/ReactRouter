@@ -1,0 +1,31 @@
+
+body {
+  background-color: rgb(196, 196, 241);
+  }
+   
+  nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  nav a:hover {
+    color: #237edf;
+  }
+
+  h1{
+    text-align: center;
+    color: rgb(238, 169, 74);
+    font-size: 70px;
+  }
+
+  img{
+    border-radius: 10px;
+  }
+
+  h4{
+    font-size: 40px;
+  }
+  p{
+    padding-top: 0%;
+  }

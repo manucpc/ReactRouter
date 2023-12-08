@@ -1,17 +1,43 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, {Component} from 'react';
+import Home from './Home';
+import Contact from './Contact';
+import Branch from './Branch';
+import Nopage from './Nopage';
+import  ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Route, Routes,Link } from 'react-router-dom';
+import './styles.css';
+class App extends Component{
+    render() {
+        return(
+ <Router>
+  <h1>Cpc polytechnic mysore</h1>
+  <nav>
+    <ul>
+      <li>
+    <Link to="/Home">HOME</Link><br></br>
+    </li>
+    <li>
+    <Link to="/Branch">BRANCH</Link><br></br>
+    </li>
+    <li>
+    <Link to="/Contact">CONTACT</Link><br></br>
+    </li>
+    <li>
+    <Link to="/Nopage">NOPAGE</Link><br></br>
+    </li>
+    </ul>
+  <Routes>
+     <Route exact path='/Home' element={<Home />} /> 
+     <Route exact path='/Branch' element={<Branch />} /> 
+     <Route exact path='/Contact' element={<Contact />} />  
+     <Route exact path='/Nopage' element={<Nopage />} /> 
+   </Routes>
+   </nav>
+ </Router>      
+        );
+        }
+    }
+const root=ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App/>);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+export default App;
